@@ -1,5 +1,7 @@
 # google-github-actions/auth
 
+A GitHub Action for authenticating to Google Cloud.
+
 Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at [https://github.com/google-github-actions/auth](https://github.com/google-github-actions/auth).
 
 ## Versions
