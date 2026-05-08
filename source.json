@@ -1,4 +1,6 @@
 {
-  "upstream": "google-github-actions/auth",
-  "version": "v3"
+  "owner": "google-github-actions",
+  "repo": "auth",
+  "version": "",
+  "url": "https://github.com/google-github-actions/auth"
 }
