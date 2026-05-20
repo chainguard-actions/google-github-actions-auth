@@ -1,7 +1,0 @@
-{
-  "owner": "google-github-actions",
-  "name": "auth",
-  "visibility": "internal",
-  "description": "A GitHub Action for authenticating to Google Cloud.",
-  "block_publish": false
-}
