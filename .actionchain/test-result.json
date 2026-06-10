@@ -1,7 +1,5 @@
 {
   "ran": true,
   "passed": true,
-  "output": "\n\u003e @google-github-actions/auth@3.0.0 test\n\u003e node --require ts-node/register --test-reporter spec --test tests/**/*.test.ts\n\n▶ #parseServiceAccountKeyJSON\n  ✔ throws exception on invalid json (5.86397ms)\n  ✔ handles base64 (0.321749ms)\n✔ #parseServiceAccountKeyJSON (7.414769ms)\n▶ #getToken\n  ✔ gets a token (8.10501ms)\n✔ #getToken (8.47075ms)\n▶ #signJWT\n  ✔ signs a jwt (3.19406ms)\n✔ #signJWT (3.54922ms)\n▶ #createCredentialsFile\n  ✔ writes the file (66.257777ms)\n✔ #createCredentialsFile (67.002237ms)\n▶ #createCredentialsFile\n  ✔ writes the file (18.919199ms)\n  ✔ writes the file with impersonation (11.95548ms)\n✔ #createCredentialsFile (32.711098ms)\nℹ tests 12\nℹ suites 0\nℹ pass 12\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2247.889453\n",
-  "duration_ms": 2751,
   "exit_code": 0
 }
