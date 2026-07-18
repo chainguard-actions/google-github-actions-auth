@@ -95,9 +95,9 @@ jobs:
       - id: 'oauth-federated-token'
         name: 'oauth-federated-token'
         env:
-          PROJECT_ID: '${{ steps.auth-default.outputs.project_id }}'
-          SECRET_NAME: '${{ vars.SECRET_NAME }}'
-          AUTH_TOKEN: '${{ steps.auth-default.outputs.auth_token }}'
+          PROJECT_ID: ${{ steps.auth-default.outputs.project_id }}
+          SECRET_NAME: ${{ vars.SECRET_NAME }}
+          AUTH_TOKEN: ${{ steps.auth-default.outputs.auth_token }}
         run: |-
           curl "https://secretmanager.googleapis.com/v1/projects/${PROJECT_ID}/secrets/${SECRET_NAME}/versions/latest:access" \
             --silent \
@@ -105,13 +105,13 @@ jobs:
             --fail \
             --header "Authorization: Bearer ${AUTH_TOKEN}"
 
-      - uses: 'google-github-actions/setup-gcloud@01af06c41d9aa0790d6fdc8f0b982b768ca4d102' # main
+      - uses: 'google-github-actions/setup-gcloud@01af06c41d9aa0790d6fdc8f0b982b768ca4d102' # ratchet:exclude main
         with:
           version: '>= 363.0.0'
 
       - name: 'gcloud'
         env:
-          SECRET_NAME: '${{ vars.SECRET_NAME }}'
+          SECRET_NAME: ${{ vars.SECRET_NAME }}
         run: |-
           gcloud secrets versions access "latest" --secret "${SECRET_NAME}"
 
@@ -152,13 +152,13 @@ jobs:
           workload_identity_provider: '${{ vars.WIF_PROVIDER_NAME }}'
           service_account: '${{ vars.SERVICE_ACCOUNT_EMAIL }}'
 
-      - uses: 'google-github-actions/setup-gcloud@01af06c41d9aa0790d6fdc8f0b982b768ca4d102' # main
+      - uses: 'google-github-actions/setup-gcloud@01af06c41d9aa0790d6fdc8f0b982b768ca4d102' # ratchet:exclude main
         with:
           version: '>= 363.0.0'
 
       - name: 'gcloud'
         env:
-          SECRET_NAME: '${{ vars.SECRET_NAME }}'
+          SECRET_NAME: ${{ vars.SECRET_NAME }}
         run: |-
           gcloud secrets versions access "latest" --secret "${SECRET_NAME}"
 
@@ -173,9 +173,9 @@ jobs:
       - id: 'oauth-token'
         name: 'oauth-token'
         env:
-          PROJECT_ID: '${{ steps.auth-access-token.outputs.project_id }}'
-          SECRET_NAME: '${{ vars.SECRET_NAME }}'
-          ACCESS_TOKEN: '${{ steps.auth-access-token.outputs.access_token }}'
+          PROJECT_ID: ${{ steps.auth-access-token.outputs.project_id }}
+          SECRET_NAME: ${{ vars.SECRET_NAME }}
+          ACCESS_TOKEN: ${{ steps.auth-access-token.outputs.access_token }}
         run: |-
           curl "https://secretmanager.googleapis.com/v1/projects/${PROJECT_ID}/secrets/${SECRET_NAME}/versions/latest:access" \
             --silent \
@@ -226,13 +226,13 @@ jobs:
         with:
           credentials_json: '${{ secrets.SERVICE_ACCOUNT_KEY_JSON }}'
 
-      - uses: 'google-github-actions/setup-gcloud@01af06c41d9aa0790d6fdc8f0b982b768ca4d102' # main
+      - uses: 'google-github-actions/setup-gcloud@01af06c41d9aa0790d6fdc8f0b982b768ca4d102' # ratchet:exclude main
         with:
           version: '>= 363.0.0'
 
       - name: 'gcloud'
         env:
-          SECRET_NAME: '${{ vars.SECRET_NAME }}'
+          SECRET_NAME: ${{ vars.SECRET_NAME }}
         run: |-
           gcloud secrets versions access "latest" --secret "${SECRET_NAME}"
 
@@ -246,9 +246,9 @@ jobs:
       - id: 'access-token'
         name: 'access-token'
         env:
-          PROJECT_ID: '${{ steps.auth-access-token.outputs.project_id }}'
-          SECRET_NAME: '${{ vars.SECRET_NAME }}'
-          ACCESS_TOKEN: '${{ steps.auth-access-token.outputs.access_token }}'
+          PROJECT_ID: ${{ steps.auth-access-token.outputs.project_id }}
+          SECRET_NAME: ${{ vars.SECRET_NAME }}
+          ACCESS_TOKEN: ${{ steps.auth-access-token.outputs.access_token }}
         run: |-
           curl "https://secretmanager.googleapis.com/v1/projects/${PROJECT_ID}/secrets/${SECRET_NAME}/versions/latest:access" \
             --silent \
