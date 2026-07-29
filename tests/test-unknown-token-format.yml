@@ -1,0 +1,24 @@
+name: Test unknown token_format value
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - id: action
+        uses: .
+        with:
+          credentials_json: 'not-valid-json'
+          token_format: 'unknown_format'
+          create_credentials_file: 'false'
+          export_environment_variables: 'false'
+        continue-on-error: true
+      - name: Assert action failed due to unknown token format
+        run: |
+          echo "outcome: ${{ steps.action.outcome }}"
+          if [ "${{ steps.action.outcome }}" != "failure" ]; then
+            echo "FAIL: expected action to fail with unknown token_format"
+            exit 1
+          fi
+          echo "PASS: action correctly failed with unknown token_format"
