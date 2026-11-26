@@ -1,6 +1,16 @@
 {
   "owner": "google-github-actions",
   "repo": "auth",
-  "version": "",
-  "url": "https://github.com/google-github-actions/auth"
+  "version": "v0.9.0",
+  "commit_sha": "09cecabe1f169596b81c2ef22b40faff87acc460",
+  "url": "https://github.com/google-github-actions/auth",
+  "policy_sha": "374911c4be584df24e6da57af2d990570ef0f859",
+  "test_policy_sha": "843adf9e4b8f85d0c08b27b9d0b09dd094b54702",
+  "test_agent_version": "2",
+  "harden_agent_version": "2",
+  "dist_artifact": {
+    "gcs_uri": "gs://patch-actions-node-artifacts/dist-artifacts/google-github-actions/auth/v0.9.0/sha256-c48ce555b124cedf01c9f41a601ced00a681c8e2d25dccd4d62f12d7322dbad1.tar.gz",
+    "sha256": "c48ce555b124cedf01c9f41a601ced00a681c8e2d25dccd4d62f12d7322dbad1",
+    "size_bytes": 105516
+  }
 }
